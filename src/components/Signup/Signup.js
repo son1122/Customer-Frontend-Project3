@@ -8,6 +8,8 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const navigate = useNavigate();
   function validateEmail() {
     const regex =
@@ -45,8 +47,8 @@ const Signup = () => {
           password: password,
           email: email,
           phone: phone,
-          firstname: "test",
-          lastname:"last Name test"
+          firstname: firstname,
+          lastname: lastname
         })
         .then(function (response) {
           console.log(response.data.status);
@@ -82,6 +84,26 @@ const Signup = () => {
         </div>
         {/* <form onSubmit={signUp}> */}
         <form className="signup-form">
+          <h4 className="signup-form-lables">First Name : </h4>
+          <input
+              className="signup-form-inputs"
+              type="text"
+              name="firstname"
+              placeholder=" First Name"
+              onChange={(e) => {
+                setFirstname(e.target.value);
+              }}
+          />
+          <h4 className="signup-form-lables">Last Name : </h4>
+          <input
+              className="signup-form-inputs"
+              type="text"
+              name="lastname"
+              placeholder="Last Name"
+              onChange={(e) => {
+                setLastname(e.target.value);
+              }}
+          />
           <h4 className="signup-form-lables">Username : </h4>
           <input
             className="signup-form-inputs"
