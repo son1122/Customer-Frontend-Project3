@@ -12,10 +12,18 @@ const Dashboard = props => {
         }))
     }
 
-
+const test=()=>{
+    axios
+        .get(`http://localhost:3001/customer/`,{
+            headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`}
+        }).then(res=>{
+            console.log("click")
+    })
+}
     return (
         <div>
-            <h1>Dash Board</h1>
+            <h1 >Dash Board</h1>
+            <button onClick={test}>Test</button>
         </div>
     )
 }

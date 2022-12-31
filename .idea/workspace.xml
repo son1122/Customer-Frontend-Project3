@@ -7,8 +7,7 @@
     <list default="true" id="f54b3233-2140-46dc-b7e2-32860cb3a70c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Signup/Signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signup/Signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Signup/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Signup/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Dashboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
