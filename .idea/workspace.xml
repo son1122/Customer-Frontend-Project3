@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f54b3233-2140-46dc-b7e2-32860cb3a70c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/Profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/Dashboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +85,9 @@
       <workItem from="1672468239305" duration="510000" />
       <workItem from="1672468954855" duration="819000" />
       <workItem from="1672469822037" duration="9405000" />
+      <workItem from="1672498158794" duration="854000" />
+      <workItem from="1672500296581" duration="4819000" />
+      <workItem from="1672506113215" duration="1425000" />
     </task>
     <servers />
   </component>
