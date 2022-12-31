@@ -13,7 +13,7 @@ body {
 }
 .customer-db-cont {
   display: grid;
-  grid-template-rows: 10vh 30vh 60vh;
+  grid-template-rows: 5vh 8vh 30vh 60vh;
   justify-content: center;
   /* border: 1px red solid; */
   height: 100vh;
@@ -24,10 +24,26 @@ body {
 .test-btn-db {
   height: 200px;
 }
-
+.customer-db-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+  background-color: #ff2531;
+}
+.customer-db-buttons > p {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.customer-db-buttons > p:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
 .customer-db-first {
   /* border: red 1px solid; */
   background-color: #ff2531;
+  display: flex;
+  justify-content: center;
   width: 100vw;
 }
 

@@ -24,6 +24,10 @@ const Dashboard = (props) => {
   };
   return (
     <div className="customer-db-cont">
+      <div className="customer-db-buttons">
+        <p>LOGOUT</p>
+        <p onClick={() => navigate("/profile")}>PROFILE</p>
+      </div>
       <div className="customer-db-first">
         <h1 className="db-header">Welcome Customer!</h1>
       </div>
