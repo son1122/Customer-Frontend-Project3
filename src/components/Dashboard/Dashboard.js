@@ -51,10 +51,28 @@ const Dashboard = (props) => {
       headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
     }).then(resu=>{
       console.log(resu)
-      let data = resu.data.map((name,index)=>{
+
+      let data = resu.data.MenuItems.map((name,index)=>{
         console.log(name)
+        // <p>{name.name}</p>
         return(
-            <p>test</p>
+            <div className="customer-db-third-customerorders-detail-cont-2">
+              <div className="customer-db-third-customerorders-detail">
+                <img
+                    className="customer-db-menu-img"
+                    src={name.img}
+                ></img>
+              </div>
+              <div className="customer-db-third-customerorders-detail">
+                {name.name}
+              </div>
+              <div className="customer-db-third-customerorders-detail">
+                {name.price}
+              </div>
+              <div className="customer-db-third-customerorders-detail">
+                {name.OrderDetail.quantity}
+              </div>
+            </div>
         )
       })
       setList(data)
@@ -114,36 +132,7 @@ const Dashboard = (props) => {
           </div>
           <div className="customer-db-third-customerorders-detail-cont">
             {/*//TODO*/}
-            <div className="customer-db-third-customerorders-detail-cont-2">
-              <div className="customer-db-third-customerorders-detail">
-                <img
-                  className="customer-db-menu-img"
-                  src="https://i.imgur.com/sCmxZ5S.jpg"
-                ></img>
-              </div>
-              <div className="customer-db-third-customerorders-detail">
-                Tom Yum Kung
-              </div>
-              <div className="customer-db-third-customerorders-detail">
-                150 Baht
-              </div>
-              <div className="customer-db-third-customerorders-detail">x 3</div>
-            </div>
-            <div className="customer-db-third-customerorders-detail-cont-2">
-              <div className="customer-db-third-customerorders-detail">
-                <img
-                  className="customer-db-menu-img"
-                  src="https://i.imgur.com/sCmxZ5S.jpg"
-                ></img>
-              </div>
-              <div className="customer-db-third-customerorders-detail">
-                Tom Yum Kung
-              </div>
-              <div className="customer-db-third-customerorders-detail">
-                150 Baht
-              </div>
-              <div className="customer-db-third-customerorders-detail">x 3</div>
-            </div>
+            {list}
           </div>
         </div>
       </div>
