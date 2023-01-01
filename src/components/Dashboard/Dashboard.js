@@ -2,12 +2,42 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
+import ReactDOM from 'react-dom';
+import { Pie } from '@ant-design/plots';
 const Dashboard = (props) => {
+  const data = [
+    {
+      type: '1',
+      value: 27,
+    },
+    {
+      type: '2',
+      value: 25,
+    },
+    {
+      type: '3',
+      value: 18,
+    },
+    {
+      type: '4',
+      value: 15,
+    },
+    {
+      type: '5',
+      value: 10,
+    },
+    {
+      type: '6',
+      value: 0,
+    },
+  ];
   const [menuItem,setMenuitem]=useState(<option value="loading">Loading</option>)
   const navigate = useNavigate();
   const [select,setSelect]=useState()
   const [list,setList]=useState()
   const [formData, setFormData] = useState({});
+  const [totalOrder,setTotalOrder] = useState(0)
+  const [totalPrice,setTotalPrice]= useState(0)
   const handleChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -32,17 +62,25 @@ const Dashboard = (props) => {
     const select = axios.get('http://localhost:3001/customer/data',{
       headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
     }).then(resu=>{
-
+      let i =0
+      let price = 0
       console.log(resu)
       let data = resu.data.map((name,index)=>{
         console.log(name)
+
+        for(let x = 0;x<name.MenuItems.length;x++){
+          i+=1;
+          price = price + name.MenuItems[x].price * name.MenuItems[x].OrderDetail.quantity;
+        }
         return(
             <option value={name.id} key={index}>{name.id}</option>
         )
       })
+      console.log(i)
+      setTotalOrder(totalOrder+i)
       setMenuitem(data)
+      setTotalPrice(price)
     })
-
   },[]);
 
   useEffect(() => {
@@ -78,6 +116,27 @@ const Dashboard = (props) => {
       setList(data)
     })}
 },[select]);
+
+  const config = {
+    appendPadding: 10,
+    data,
+    angleField: 'value',
+    colorField: 'type',
+    radius: 0.8,
+    autoFit:true,
+    label: {
+      type: 'outer',
+      content: '{name} {percentage}',
+    },
+    interactions: [
+      {
+        type: 'pie-legend-active',
+      },
+      {
+        type: 'element-active',
+      },
+    ],
+  };
   return (
     <div className="customer-db-cont">
       <div className="customer-db-buttons">
@@ -93,7 +152,7 @@ const Dashboard = (props) => {
             <h4>Total menu ordered</h4>
           </div>
           <div className="customer-db-second-content-detail">
-            <h4>108</h4>
+            <h4>{totalOrder}</h4>
           </div>
         </div>
         <div className="customer-db-second-content-cont">
@@ -101,10 +160,12 @@ const Dashboard = (props) => {
             <h4>Total Spent</h4>
           </div>
           <div className="customer-db-second-content-detail">
-            <h4>182039 Baht</h4>
+            <h4>{totalPrice}.00    Bath</h4>
           </div>
         </div>
-        <div className="customer-db-second-content-cont-pie">FOR PIE CHART</div>
+        <div className="customer-db-second-content-cont-pie">
+          <Pie {...config} />;
+        </div>
       </div>
       <div className="customer-db-third">
         <div className="customer-db-third-customerorders">
