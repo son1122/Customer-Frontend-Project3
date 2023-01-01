@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 const Dashboard = (props) => {
+  const [menuItem,setMenuitem]=useState(<option value="loading">Loading</option>)
   const navigate = useNavigate();
+  const [select,setSelect]=useState()
+  const [list,setList]=useState()
   const [formData, setFormData] = useState({});
   const handleChange = (e) => {
     setFormData((prevState) => ({
@@ -12,16 +15,51 @@ const Dashboard = (props) => {
     }));
   };
 
+  const handleChangeSelect = (e) => {
+    setSelect(e.target.value)
+  };
+
   const test = () => {
     axios
-      .get(`http://localhost:3001/customer/`, {
+      .get(`http://localhost:3001/customer/data`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
       })
       .then((res) => {
-        console.log("click");
-        console.log("res customer > ", res);
+        console.log(res)
       });
   };
+  useEffect(() => {
+    const select = axios.get('http://localhost:3001/customer/data',{
+      headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
+    }).then(resu=>{
+
+      console.log(resu)
+      let data = resu.data.map((name,index)=>{
+        console.log(name)
+        return(
+            <option value={name.id} key={index}>{name.id}</option>
+        )
+      })
+      setMenuitem(data)
+    })
+
+  },[]);
+
+  useEffect(() => {
+    if(select!==undefined){
+    axios.get(`http://localhost:3001/customer/data/${select}`,{
+      headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
+    }).then(resu=>{
+      console.log(resu)
+      let data = resu.data.map((name,index)=>{
+        console.log(name)
+        return(
+            <p>test</p>
+        )
+      })
+      setList(data)
+    })}
+},[select]);
   return (
     <div className="customer-db-cont">
       <div className="customer-db-buttons">
@@ -29,7 +67,7 @@ const Dashboard = (props) => {
         <p onClick={() => navigate("/profile")}>PROFILE</p>
       </div>
       <div className="customer-db-first">
-        <h1 className="db-header">Welcome Customer!</h1>
+        <h1 className="db-header" onClick={test}>Welcome Customer!</h1>
       </div>
       <div className="customer-db-second">
         <div className="customer-db-second-content-cont">
@@ -54,6 +92,11 @@ const Dashboard = (props) => {
         <div className="customer-db-third-customerorders">
           <div className="customer-db-third-customerorders-label">
             Order's History
+            {/*//TODO*/}
+            <select name="<OrderID>" id="OrderID" onChange={handleChangeSelect}>
+              <option value="" selected disabled hidden>Choose here</option>
+              {menuItem}
+            </select>
           </div>
           <div className="customer-db-third-customerorders-label-menu">
             <div className="customer-db-third-customerorders-label-menu-cont">
@@ -70,6 +113,7 @@ const Dashboard = (props) => {
             </div>
           </div>
           <div className="customer-db-third-customerorders-detail-cont">
+            {/*//TODO*/}
             <div className="customer-db-third-customerorders-detail-cont-2">
               <div className="customer-db-third-customerorders-detail">
                 <img
