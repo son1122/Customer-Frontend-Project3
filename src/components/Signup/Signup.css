@@ -63,6 +63,7 @@
 .signup-form-btn:hover {
   opacity: 80%;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .signup-form-header {

@@ -69,4 +69,5 @@
 .login-btn:hover {
   cursor: pointer;
   opacity: 80%;
+  transition: 0.5s;
 }
