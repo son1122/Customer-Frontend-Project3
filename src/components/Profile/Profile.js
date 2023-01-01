@@ -194,6 +194,11 @@ const Profile = () => {
             }}
           />
           <br></br>
+            <button onClick={()=> {
+                localStorage.removeItem('jwt')
+                navigate('/login')
+            }
+            }>Log Out</button>
         </form>
         <div className="return-to-login-btn" onClick={() => navigate("/dashboard")}>
           Return to Dashboard
@@ -208,7 +213,13 @@ const Profile = () => {
           <input
               className="signup-form-btn"
               type="button"
-              onClick={signUp}
+              onClick={()=>{
+
+                    axios.delete('http://localhost:3001/customer/user',{
+                      headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`}
+                    })
+                  // 2,Jane,Doe,022-222-2222,janedoe@mail.com,janedoe,1234,2022-12-30 16:38:57.656000 +00:00,2022-12-30 16:38:57.656000 +00:00
+              }}
               value="Delete"
           />
         </div>
