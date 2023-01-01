@@ -5,32 +5,11 @@ import "./Dashboard.css";
 import ReactDOM from 'react-dom';
 import { Pie } from '@ant-design/plots';
 const Dashboard = (props) => {
-  const data = [
-    {
-      type: '1',
-      value: 27,
-    },
-    {
-      type: '2',
-      value: 25,
-    },
-    {
-      type: '3',
-      value: 18,
-    },
-    {
-      type: '4',
-      value: 15,
-    },
-    {
-      type: '5',
-      value: 10,
-    },
-    {
-      type: '6',
-      value: 0,
-    },
-  ];
+  const [data,setData]=useState([
+      {
+    type: 'Test',
+    value: 27,
+  }])
   const [menuItem,setMenuitem]=useState(<option value="loading">Loading</option>)
   const navigate = useNavigate();
   const [select,setSelect]=useState()
@@ -80,7 +59,28 @@ const Dashboard = (props) => {
       setTotalOrder(totalOrder+i)
       setMenuitem(data)
       setTotalPrice(price)
+      axios.get('http://localhost:3001/customer/menu',{
+        headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
+      }).
+      then(res=>{
+        console.log(res);
+        let insert = []
+        for(let i=0;i<res.data.length;i++){
+          console.log(res.data[i].name)
+          insert.push({type:res.data[i].name,value:0})
+        }
+        resu.data.forEach((name,index)=>{
+          for(let x = 0;x<name.MenuItems.length;x++){
+            i+=1;
+            let value = name.MenuItems[x].name
+            console.log(name.MenuItems[x].name)
+            insert.find(o => o.type === name.MenuItems[x].name).value+=1
+          }
+        })
+        setData(insert)
+      })
     })
+
   },[]);
 
   useEffect(() => {
@@ -164,7 +164,7 @@ const Dashboard = (props) => {
           </div>
         </div>
         <div className="customer-db-second-content-cont-pie">
-          <Pie {...config} />;
+          <Pie {...config} />
         </div>
       </div>
       <div className="customer-db-third">
