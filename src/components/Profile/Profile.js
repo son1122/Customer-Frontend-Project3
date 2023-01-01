@@ -1,5 +1,5 @@
 import "./Profile.css";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Profile = () => {
@@ -48,7 +48,7 @@ const Profile = () => {
           email: email,
           phone: phone,
           firstname: firstname,
-          lastname: lastname
+          lastname: lastname,
         })
         .then(function (response) {
           console.log(response.data.status);
@@ -76,40 +76,44 @@ const Profile = () => {
     e.preventDefault();
     validateForm();
   };
-  const edit = (e) =>{
-      // validateEmail()
-      // validatePassword()
+  const edit = (e) => {
+    // validateEmail()
+    // validatePassword()
     axios
-        .put(`http://localhost:3001/customer/edit`, {
+      .put(
+        `http://localhost:3001/customer/edit`,
+        {
           username: username,
           password: password,
           email: email,
           phone: phone,
           firstname: firstname,
-          lastname: lastname
-        },{
-          headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`}
-        })
-        .then(res=>{
-          console.log(res)
-            navigate('/login')
-        })
-  }
+          lastname: lastname,
+        },
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        navigate("/login");
+      });
+  };
   useEffect(() => {
     axios
-        .get(`http://localhost:3001/customer`,{
-          headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`}
-        })
-        .then((res) => {
-            setEmail(res.data.email)
-                setFirstname(res.data.firstname)
-                setLastname(res.data.lastname)
-            setUsername(res.data.username)
-            setPhone(res.data.phone)
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      .get(`http://localhost:3001/customer`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
+      })
+      .then((res) => {
+        setEmail(res.data.email);
+        setFirstname(res.data.firstname);
+        setLastname(res.data.lastname);
+        setUsername(res.data.username);
+        setPhone(res.data.phone);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <div className="main-cont">
@@ -121,24 +125,24 @@ const Profile = () => {
         <form className="signup-form">
           <h4 className="signup-form-lables">First Name : </h4>
           <input
-              className="signup-form-inputs"
-              type="text"
-              name="firstname"
-              defaultValue={firstname}
-              onChange={(e) => {
-                setFirstname(e.target.value);
-              }}
+            className="signup-form-inputs"
+            type="text"
+            name="firstname"
+            defaultValue={firstname}
+            onChange={(e) => {
+              setFirstname(e.target.value);
+            }}
           />
           <h4 className="signup-form-lables">Last Name : </h4>
           <input
-              className="signup-form-inputs"
-              type="text"
-              name="lastname"
-              placeholder="Last Name"
-              defaultValue={lastname}
-              onChange={(e) => {
-                setLastname(e.target.value);
-              }}
+            className="signup-form-inputs"
+            type="text"
+            name="lastname"
+            placeholder="Last Name"
+            defaultValue={lastname}
+            onChange={(e) => {
+              setLastname(e.target.value);
+            }}
           />
           <h4 className="signup-form-lables">Username : </h4>
           <input
@@ -195,21 +199,41 @@ const Profile = () => {
           />
           <br></br>
         </form>
-        <div className="return-to-login-btn" onClick={() => navigate("/dashboard")}>
+        <div
+          className="return-to-login-btn"
+          onClick={() => navigate("/dashboard")}
+        >
           Return to Dashboard
         </div>
-        <div style={{display:"grid",gridTemplateColumns:"auto auto"}}>
-        <input
-          className="signup-form-btn"
-          type="button"
-          onClick={edit}
-          value="Edit"
-        />
+        <div style={{ display: "grid", gridTemplateColumns: "auto auto auto" }}>
           <input
-              className="signup-form-btn"
-              type="button"
-              onClick={signUp}
-              value="Delete"
+            className="signup-form-btn"
+            type="button"
+            onClick={edit}
+            value="Edit"
+          />
+
+          <input
+            className="signup-form-btn"
+            type={"button"}
+            onClick={() => {
+              localStorage.removeItem("jwt");
+              navigate("/login");
+            }}
+            value="Logout"
+          ></input>
+          <input
+            className="signup-form-btn"
+            type="button"
+            onClick={() => {
+              axios.delete("http://localhost:3001/customer/user", {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                },
+              });
+              // 2,Jane,Doe,022-222-2222,janedoe@mail.com,janedoe,1234,2022-12-30 16:38:57.656000 +00:00,2022-12-30 16:38:57.656000 +00:00
+            }}
+            value="Delete"
           />
         </div>
       </div>
