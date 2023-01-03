@@ -177,7 +177,7 @@ All code we write we all so hava psudo code to explain insid but here is some of
 This is all path we have make
 
 
-```
+```sequelize
 router.get("/auth/login", ctrl.api.login);
 
 router.post("/signup", ctrl.auth.signup);
