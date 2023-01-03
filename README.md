@@ -60,18 +60,22 @@ Let's thingking about what user want from POS throught User Stories
   part 1 Front end wire frame, at first we submit a drawing wire frame to instructer and 
   /////imghere///////
   
-  part 2 Database wire frame, we use ERd to draw main table first and add more deatil for stacht goal
+  part 2 Database wire frame, we use ERd to draw main table first and add more deatil for dash board and so on
+  
+  /////img/////;
   
   
-
-
 
 
 <h3>2. make a List of technical difficulties and study all of them</h3>
 
-
+We review many lesson in react sequelize also have to use ant* for bonus in custommer page
 
 <h3>3. make a simple step plan</h3>
+
+Front POS app
+
+
 
 
 
