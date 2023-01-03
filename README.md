@@ -1,4 +1,3 @@
-# Customer-Frontend-Project3
 
 <h1 style="font-size:300%;"><img width="30" alt="Screenshot 2565-11-16 at 14 05 55" src="https://cdn-icons-png.flaticon.com/512/2727/2727313.png"> Point of Sales System (POS)</h1>
 
@@ -7,7 +6,7 @@
   
   
 
-<h3>Feature</h3>
+## Feature 
 
       1. Transaction processing: The ability to process sales transactions
 
@@ -25,22 +24,22 @@
 
 
 
-<h3>Function</h3>
+## Function
 
-<div>User-Frontend 
-  <p>Frontend repo : https://github.com/son1122/Fronted-Project-3</p>
-  <p>Netlify Deploy URL : https://fronted-tda-sei-project3.netlify.app/login</p>
-</div>
+**User-Frontend** 
+  - Frontend repo : https://github.com/son1122/Fronted-Project-3
+  - Netlify Deploy URL : https://fronted-tda-sei-project3.netlify.app/login
+
   
-<div>User-backend
-  <p>Backend repo : https://github.com/son1122/Backend-Project-3</p>
-   <p>Netlify Deploy URL : https://backend-sei-project-3.cyclic.app</p>
-</div>
+**User-backend**
+  - Backend repo : https://github.com/son1122/Backend-Project-3
+  - Netlify Deploy URL : https://backend-sei-project-3.cyclic.app
+
   
-<div>Bonus
-  <p>Customer repo : https://github.com/son1122/Customer-Frontend-Project3</p>
-  <p>Netlify Deploy URL : https://customer-pos.netlify.app/login</p>
-</div>
+**Bonus**
+  - Customer repo : https://github.com/son1122/Customer-Frontend-Project3
+  - Netlify Deploy URL : https://customer-pos.netlify.app/login
+
 
 
 <h2>My Planing Step</h2>
@@ -48,7 +47,7 @@
 <h3>1. List All requirement and draw a Wireframe</h3>
 Let's thingking about what user want from POS throught User Stories 
 
-<h3> User Stories </h3>
+<h3> 1.1 User Stories </h3>
 
 <ul>
   <li>As a User I want to have an account for my store *Note User repersent shop owner who use POS system</li>
@@ -64,7 +63,7 @@ Let's thingking about what user want from POS throught User Stories
   <li>As a POS App I want ability to create and update data from database </li>  
 </ul>
 
-<h3> Wireframe </h3>
+<h3>1.2 Wireframe </h3>
   We sperate in two part for wire frame
   
   <p>part 1 Frontend wire frame, For login page, Order Page, Table Page. We use the same design for both order and Table </p>
@@ -79,7 +78,7 @@ Let's thingking about what user want from POS throught User Stories
   <img width="4348" alt="SECRET_NSA_Project_Planning" src="https://user-images.githubusercontent.com/114508614/210402356-8691bee3-7a3c-4129-838f-f516c18f965b.png">
 
 
-<h3>2. make a List of technical difficulties and study all of them</h3>
+<h2>2. make a List of technical difficulties and study all of them</h2>
 
 <ul>
   <li>sequelize</li>
@@ -95,13 +94,13 @@ Let's thingking about what user want from POS throught User Stories
 </ul>
 
 
-<h3>3. make a simple step plan</h3>
+## 3. make a simple step plan
 
 Spilt to three part frontend, database in bit.io, sequelize in backend. To see how data is flow we create flow chart and sequence diagram you can see in this pdf
 [sequence_diagram_Order.pdf](https://github.com/son1122/Customer-Frontend-Project3/files/10338837/sequence_diagram_Order.pdf)
 
 
-<h4>Front POS react app</h4>
+### Front POS react app
 <ol>
   <li>Order page
   <ul>
@@ -129,8 +128,9 @@ Spilt to three part frontend, database in bit.io, sequelize in backend. To see h
   </li>
 </ol>
 
-<ol>Bonus
-  <li>dashboard page
+ **Bonus**
+<ol>
+  <li> **dashboard page**
     <ul>
     <li>Get data from data base to do a presentation</li>
   </ul>
@@ -148,7 +148,7 @@ Spilt to three part frontend, database in bit.io, sequelize in backend. To see h
 </ol>
 
 
-<h4>Backend database</h4>
+<h3>Backend database</h3>
 <ul>
   <li>Make a local data base in psql to test.</li>
   <li>make relation to database as er diagram.</li>
@@ -164,14 +164,66 @@ Spilt to three part frontend, database in bit.io, sequelize in backend. To see h
 
 
 <h2>Code Explain</h2>
-All code we write we all so hava psudo code to explain insid but here is some of them
+All code we write we all so hava psudo code to explain insid but here is some of them.
+
+- for example this is a code for check out button when button check out was clicked this function will work by show Text 'Payment Succeed' at the top-right of the window
 
 ![image](https://user-images.githubusercontent.com/114508614/210401496-17988c38-f4f4-45c9-894b-e61066cd7050.png)
 
 
 ![image](https://user-images.githubusercontent.com/114508614/210402550-21bd5380-6baf-4b86-a3d9-bac50d6051c7.png)
 
+**API Path**
+This is all path we have make
 
+
+```
+router.get("/auth/login", ctrl.api.login);
+
+router.post("/signup", ctrl.auth.signup);
+router.post("/login", ctrl.auth.login);
+router.get("/verify", ctrl.auth.verify);
+
+router.get("/", ctrl.customer.test);
+router.post("/signup", ctrl.customer.signup);
+router.post("/login", ctrl.customer.login);
+router.get("/verify", ctrl.customer.verify);
+router.put("/edit", ctrl.customer.edit);
+router.get("/data/", ctrl.customer.data);
+router.get("/data/:id", ctrl.customer.dataId);
+router.get("/menu", ctrl.customer.menu);
+router.delete("/user", ctrl.customer.deleteUser);
+
+router.get("/menu", ctrl.dashboard.getMenuDashboard);
+router.get("/menuitem", ctrl.dashboard.getMenu);
+router.get("/menu/:id", ctrl.dashboard.getMenuDashboard);
+router.get("/menuitem", ctrl.dashboard.getMenu);
+router.get("/customer", ctrl.dashboard.getCustomer);
+router.get("/waiter", ctrl.dashboard.getChef);
+router.get("/chef", ctrl.dashboard.getWaiter);
+router.get("/order", ctrl.dashboard.getOrder);
+router.get("/ingredient", ctrl.dashboard.getIngredient);
+router.get("/location", ctrl.dashboard.getMenu);
+router.get("/seller", ctrl.dashboard.getSeller);
+router.get("/location/seller", ctrl.dashboard.getLocationSeller);
+router.get("/location/customer", ctrl.dashboard.getLocationSeller);
+
+router.get("/", ctrl.menuitem.getAllMenuItem);
+router.get("/category/:catid", ctrl.menuitem.allMenuItemByCategory);
+router.get("/search", ctrl.menuitem.searchMenuItem);
+
+router.get("/", ctrl.order.testOrder);
+router.post("/", ctrl.order.createOrder);
+router.get("/detail", ctrl.order.showOrderDetail);
+router.get("/table/:index", ctrl.order.orderByTable);
+router.get("/:index", ctrl.order.showOrder);
+router.put("/status/:tableNumber", ctrl.order.updateOrderStatus);
+
+router.get("/:tableNumber", ctrl.orderdetail.getOrderDetailMatch);
+
+router.get("/", ctrl.table.getAllTable);
+
+```
 
 <h3>What would you do differently?</h3>
 
