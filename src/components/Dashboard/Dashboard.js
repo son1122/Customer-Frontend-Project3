@@ -33,7 +33,7 @@ const Dashboard = (props) => {
 
   const test = () => {
     axios
-      .get(`http://localhost:3001/customer/data`, {
+      .get(`https://backend-sei-project-3.cyclic.app/customer/data`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
       })
       .then((res) => {
@@ -42,7 +42,7 @@ const Dashboard = (props) => {
   };
   useEffect(() => {
     const select = axios
-      .get("http://localhost:3001/customer/data", {
+      .get("https://backend-sei-project-3.cyclic.app/customer/data", {
         headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
       })
       .then((resu) => {
@@ -69,7 +69,7 @@ const Dashboard = (props) => {
         setMenuitem(data);
         setTotalPrice(price);
         axios
-          .get("http://localhost:3001/customer/menu", {
+          .get("https://backend-sei-project-3.cyclic.app/customer/menu", {
             headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
           })
           .then((res) => {
@@ -97,7 +97,7 @@ const Dashboard = (props) => {
   useEffect(() => {
     if (select !== undefined) {
       axios
-        .get(`http://localhost:3001/customer/data/${select}`, {
+        .get(`https://backend-sei-project-3.cyclic.app/customer/data/${select}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
         })
         .then((resu) => {

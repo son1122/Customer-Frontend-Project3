@@ -18,7 +18,7 @@ const FruitForm = props => {
 
         data.readyToEat = fruitData.readyToEat === "on" ? true : false
         console.log(data);
-        axios.post("http://localhost:3001/fruits", data)
+        axios.post("https://backend-sei-project-3.cyclic.app/fruits", data)
         .then(res => {
             console.log(res)
         })

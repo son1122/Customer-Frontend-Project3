@@ -16,7 +16,7 @@ const Login = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/customer/login", formData)
+      .post("https://backend-sei-project-3.cyclic.app/customer/login", formData)
       .then((res) => {
         console.log(res.data);
         let token = res.data;

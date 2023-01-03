@@ -42,7 +42,7 @@ const Signup = () => {
   function validateForm() {
     if (validateEmail() && validatePassword()) {
       axios
-        .post(`http://localhost:3001/customer/signup`, {
+        .post(`https://backend-sei-project-3.cyclic.app/customer/signup`, {
           username: username,
           password: password,
           email: email,

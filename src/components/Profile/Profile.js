@@ -42,7 +42,7 @@ const Profile = () => {
   function validateForm() {
     if (validateEmail() && validatePassword()) {
       axios
-        .post(`http://localhost:3001/customer/edit`, {
+        .post(`https://backend-sei-project-3.cyclic.app/customer/edit`, {
           username: username,
           password: password,
           email: email,
@@ -81,7 +81,7 @@ const Profile = () => {
     // validatePassword()
     axios
       .put(
-        `http://localhost:3001/customer/edit`,
+        `https://backend-sei-project-3.cyclic.app/customer/edit`,
         {
           username: username,
           password: password,
@@ -101,7 +101,7 @@ const Profile = () => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/customer`, {
+      .get(`https://backend-sei-project-3.cyclic.app/customer`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
       })
       .then((res) => {
@@ -226,7 +226,7 @@ const Profile = () => {
             className="signup-form-btn"
             type="button"
             onClick={() => {
-              axios.delete("http://localhost:3001/customer/user", {
+              axios.delete("https://backend-sei-project-3.cyclic.app/customer/user", {
                 headers: {
                   Authorization: `Bearer ${localStorage.getItem("jwt")}`,
                 },

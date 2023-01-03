@@ -14,7 +14,7 @@ function App() {
 
   const getFruits = () => {
     console.log(localStorage.getItem("jwt"));
-    axios.get('http://localhost:3001/customer', {
+    axios.get('https://backend-sei-project-3.cyclic.app/customer', {
       headers: {Authorization: `Bearer ${localStorage.getItem("jwt")}`}
     })
     .then(res => {
