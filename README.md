@@ -27,8 +27,9 @@
 
 <h3>Function</h3>
 
-
-Netlify Deploy URL : [https://test)
+<p>User-Frontend-repo : https://github.com/son1122/Fronted-Project-3</p>
+<p>User-backen-repo : https://github.com/son1122/Fronted-Project-3</p>
+<p>Netlify Deploy URL : [https://test)</p>
 
 
 
@@ -57,12 +58,12 @@ Let's thingking about what user want from POS throught User Stories
 <h3> Wireframe </h3>
   We sperate in two part for wire frame
   
-  part 1 Front end wire frame, at first we submit a drawing wire frame to instructer and 
-  /////imghere///////
+  <p>part 1 Front end wire frame, at first we submit a drawing wire frame and compaer to other POS for refferent</p>
+  ![image](https://user-images.githubusercontent.com/114508614/210384372-e67cd9cf-4ae7-4dc2-a575-e4bf7ca167e6.png)
+  <p>then we hav
   
   part 2 Database wire frame, we use ERd to draw main table first and add more deatil for dash board and so on
-  
-  /////img/////
+  ![image](https://user-images.githubusercontent.com/114508614/210387967-cb63f0e7-1be4-48d2-af27-49365524adcf.png)
   
   
 
@@ -76,6 +77,7 @@ Let's thingking about what user want from POS throught User Stories
   <li>html, css,  java script</li>
   <li>react</li>
   <li>react ant design</li>
+  <li>react spinner</li>
   <li>psql</li>
   <li>figma</li>
   <li>bootstrap</li>
@@ -92,18 +94,20 @@ Order page, Table page, Login page ,and bonus dashboard page
 
 
 <h4>Backend database</h4>
-Make a local data base in psql to test.
-make relation to database as er diagram.
-create a data in bit.io.
-connect data base in bit.io to real react page.
+<p>Make a local data base in psql to test.</p>
+<p>make relation to database as er diagram.</p>
+<p>create a data in bit.io.</p>
+<p>connect data base in bit.io to real react page.</p>
 
 <h4>Bonus</h4>
-Do an authen.
-create dashboard for POS app.
-We create  custommer page.
+<p>Do an authen.</p>
+<p>create dashboard for POS app.</p>
+<p>We create  custommer page.</p>
 
 
 <h2>Code Explain</h2>
+![image](https://user-images.githubusercontent.com/114508614/210400589-7a27c8ff-8cd3-42e4-9c46-39eeea549f23.png)
+
 
 
 
@@ -125,16 +129,13 @@ check out for more in <a> https://ant.design/ </a>
 </p>
 <h3>What are you most proud of?</h3>
 
-
-
-
-<h3>What would you do next?</h3>
-
-   
+  
    
 
 <h3>What did you learn?</h3>
-team work planing
-react ant design
-connect database to react app
+<ul>
+  <li>team work planing</li>
+  <li>react ant design</li>
+  <li>connect database to react app</li>
+<ul>
 
