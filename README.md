@@ -62,7 +62,7 @@ Let's thingking about what user want from POS throught User Stories
   
   part 2 Database wire frame, we use ERd to draw main table first and add more deatil for dash board and so on
   
-  /////img/////\
+  /////img/////
   
   
 
@@ -92,9 +92,15 @@ Order page, Table page, Login page ,and bonus dashboard page
 
 
 <h4>Backend database</h4>
+Make a local data base in psql to test.
+make relation to database as er diagram.
+create a data in bit.io.
+connect data base in bit.io to real react page.
 
-
-
+<h4>Bonus</h4>
+Do an authen.
+create dashboard for POS app.
+We create  custommer page.
 
 
 <h2>Code Explain</h2>
@@ -104,9 +110,21 @@ Order page, Table page, Login page ,and bonus dashboard page
 
 <h3>What would you do differently?</h3>
 
+<p>The most interesting thing in my team decise to pay attion to is dev too : "react ant design". It is an React UI library antd that contains a set of high quality components and demos for building rich, interactive user interfaces.
+ what ant design present is
+  <div>✨ Features
+     <p>🌈 Enterprise-class UI designed for web applications.</p>
+     <p>📦 A set of high-quality React components out of the box.</p>
+     <p>🛡 Written in TypeScript with predictable static types.</p>
+     <p>⚙️ Whole package of design resources and development tools.</p>
+     <p>🌍 Internationalization support for dozens of languages.</p>
+     <p>🎨 Powerful theme customization in every detail.</p>
+  </div>
 
-
+check out for more in <a> https://ant.design/ </a>
+</p>
 <h3>What are you most proud of?</h3>
+
 
 
 
@@ -117,8 +135,6 @@ Order page, Table page, Login page ,and bonus dashboard page
 
 <h3>What did you learn?</h3>
 team work planing
-new too
-react ant 
+react ant design
+connect database to react app
 
-
-# Customer-Backend-Project3
