@@ -58,14 +58,16 @@ Let's thingking about what user want from POS throught User Stories
 <h3> Wireframe </h3>
   We sperate in two part for wire frame
   
-  <p>part 1 Front end wire frame, at first we submit a drawing wire frame and compaer to other POS for refferent</p>
-  ![image](https://user-images.githubusercontent.com/114508614/210384372-e67cd9cf-4ae7-4dc2-a575-e4bf7ca167e6.png)
-  <p>then we hav
+  <p>part 1 Frontend wire frame, For login page, Order Page, Table Page. We use the same design for both order and Table </p>
+<img width="784" alt="Screenshot_2565-12-24_at_10 31 50" src="https://user-images.githubusercontent.com/114508614/210405103-96da9479-fa9e-4994-a661-3ac4bc347836.png">
+
+
+![Screenshot_2565-12-24_at_10 40 49](https://user-images.githubusercontent.com/114508614/210404838-3faa060b-846b-4155-8514-83004a4a8801.png)
+
   
   part 2 Database wire frame, we use ERd to draw main table first and add more deatil for dash board and so on
-  ![image](https://user-images.githubusercontent.com/114508614/210387967-cb63f0e7-1be4-48d2-af27-49365524adcf.png)
-  
-  
+
+  <img width="4348" alt="SECRET_NSA_Project_Planning" src="https://user-images.githubusercontent.com/114508614/210402356-8691bee3-7a3c-4129-838f-f516c18f965b.png">
 
 
 <h3>2. make a List of technical difficulties and study all of them</h3>
@@ -82,15 +84,27 @@ Let's thingking about what user want from POS throught User Stories
   <li>figma</li>
   <li>bootstrap</li>
 </ul>
+
+
 <h3>3. make a simple step plan</h3>
 
 Spilt into two team one on my team do frontend other do a database and sequelize in backend
 
 
+
 <h4>Front POS react app</h4>
-
-Order page, Table page, Login page ,and bonus dashboard page
-
+<ol>
+  <li>Order page <ul>
+    <li>create component by use react</li>
+    <li>have useState ,useEffect</li>
+    <li>Have Axios to g</li>
+  <li>Table page</li>
+  <li>Login page </li>
+</ol>
+<ol>Bonus
+  <li>dashboard page</li>
+  <li>customer page</li>
+</ol>
 
 
 <h4>Backend database</h4>
@@ -102,13 +116,14 @@ Order page, Table page, Login page ,and bonus dashboard page
 <h4>Bonus</h4>
 <p>Do an authen.</p>
 <p>create dashboard for POS app.</p>
-<p>We create  custommer page.</p>
 
 
 <h2>Code Explain</h2>
-![image](https://user-images.githubusercontent.com/114508614/210400589-7a27c8ff-8cd3-42e4-9c46-39eeea549f23.png)
+
+![image](https://user-images.githubusercontent.com/114508614/210401496-17988c38-f4f4-45c9-894b-e61066cd7050.png)
 
 
+![image](https://user-images.githubusercontent.com/114508614/210402550-21bd5380-6baf-4b86-a3d9-bac50d6051c7.png)
 
 
 
