@@ -27,14 +27,23 @@
 
 <h3>Function</h3>
 
-<p>User-Frontend-repo : https://github.com/son1122/Fronted-Project-3</p>
-<p>User-backen-repo : https://github.com/son1122/Fronted-Project-3</p>
-<p>Netlify Deploy URL : [https://test)</p>
-
+<div>User-Frontend 
+  <p>Frontend repo : https://github.com/son1122/Fronted-Project-3</p>
+  <p>Netlify Deploy URL : https://fronted-tda-sei-project3.netlify.app/login</p>
+</div>
+  
+<div>User-backend
+  <p>Backend repo : https://github.com/son1122/Backend-Project-3</p>
+   <p>Netlify Deploy URL : https://backend-sei-project-3.cyclic.app</p>
+</div>
+  
+<div>Bonus
+  <p>Customer repo : https://github.com/son1122/Customer-Frontend-Project3</p>
+  <p>Netlify Deploy URL : https://customer-pos.netlify.app/login</p>
+</div>
 
 
 <h2>My Planing Step</h2>
-
 
 <h3>1. List All requirement and draw a Wireframe</h3>
 Let's thingking about what user want from POS throught User Stories 
@@ -88,37 +97,74 @@ Let's thingking about what user want from POS throught User Stories
 
 <h3>3. make a simple step plan</h3>
 
-Spilt into two team one on my team do frontend other do a database and sequelize in backend
-
+Spilt to three part frontend, database in bit.io, sequelize in backend. To see how data is flow we create flow chart and sequence diagram you can see in this pdf
+[sequence_diagram_Order.pdf](https://github.com/son1122/Customer-Frontend-Project3/files/10338837/sequence_diagram_Order.pdf)
 
 
 <h4>Front POS react app</h4>
 <ol>
-  <li>Order page <ul>
-    <li>create component by use react</li>
-    <li>have useState ,useEffect</li>
-    <li>Have Axios to g</li>
-  <li>Table page</li>
-  <li>Login page </li>
+  <li>Order page
+  <ul>
+    <li>Create component by use react.</li>
+    <li>Have useState and,useEffect.</li>
+    <li>Have Axios to get API from database.</li>
+    <li>The page have ability to send Post an delete data page to database.</li>
+    <li>Creat a NAV bar to able to switch to other page.</li>
+  </ul>
+  </li>
+  
+  <li>Table page
+  <ul>
+    <li>Have Table components</li>
+    <li>Onclick at each Table component, Order detail will show at side of the page.</li>
+    <li>On click at check out button the page can Put data to database</li>
+  </ul>
+  </li>
+    
+  <li>Login page
+  <ul>
+    <li>The page have ability to send Post data page to database.</li>
+    <li>Have authentication</li>
+  </ul>
+  </li>
 </ol>
+
 <ol>Bonus
-  <li>dashboard page</li>
-  <li>customer page</li>
+  <li>dashboard page
+    <ul>
+    <li>Get data from data base to do a presentation</li>
+  </ul>
+  </li>
+  
+  <li>customer page
+    <ul>
+    <li>Able to register</li>
+    <li>Able to sign up</li>
+    <li>Able to post data to database</li>
+    <li>Have authentication</li>
+    <li>Get data from database to dash board</li>
+  </ul>
+  </li>
 </ol>
 
 
 <h4>Backend database</h4>
-<p>Make a local data base in psql to test.</p>
-<p>make relation to database as er diagram.</p>
-<p>create a data in bit.io.</p>
-<p>connect data base in bit.io to real react page.</p>
+<ul>
+  <li>Make a local data base in psql to test.</li>
+  <li>make relation to database as er diagram.</li>
+  <li>create a data in bit.io.</li>
+  <li>connect data base in bit.io to real react page.</li>
+</ul>
 
 <h4>Bonus</h4>
-<p>Do an authen.</p>
-<p>create dashboard for POS app.</p>
+<ul>
+  <li>Do an authen.</li>
+  <li>create dashboard for POS app.</li>
+</ul>
 
 
 <h2>Code Explain</h2>
+All code we write we all so hava psudo code to explain insid but here is some of them
 
 ![image](https://user-images.githubusercontent.com/114508614/210401496-17988c38-f4f4-45c9-894b-e61066cd7050.png)
 
