@@ -77,16 +77,21 @@ Let's thingking about what user want from POS throught User Stories
   <li>react</li>
   <li>react ant design</li>
   <li>psql</li>
+  <li>figma</li>
   <li>bootstrap</li>
 </ul>
 <h3>3. make a simple step plan</h3>
 
-Front POS react app
-spilt in to 
+Spilt into two team one on my team do frontend other do a database and sequelize in backend
+
+
+<h4>Front POS react app</h4>
+
+Order page, Table page, Login page ,and bonus dashboard page
 
 
 
-Backend database
+<h4>Backend database</h4>
 
 
 
@@ -111,6 +116,9 @@ Backend database
    
 
 <h3>What did you learn?</h3>
+team work planing
+new too
+react ant 
 
 
 # Customer-Backend-Project3
