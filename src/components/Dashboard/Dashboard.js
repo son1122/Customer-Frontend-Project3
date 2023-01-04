@@ -97,9 +97,12 @@ const Dashboard = (props) => {
   useEffect(() => {
     if (select !== undefined) {
       axios
-        .get(`https://backend-sei-project-3.cyclic.app/customer/data/${select}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
-        })
+        .get(
+          `https://backend-sei-project-3.cyclic.app/customer/data/${select}`,
+          {
+            headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
+          }
+        )
         .then((resu) => {
           console.log(resu);
 
@@ -133,11 +136,21 @@ const Dashboard = (props) => {
     data,
     angleField: "value",
     colorField: "type",
-    radius: 0.8,
+    radius: 0.9,
     autoFit: true,
+    legend: {
+      label: {
+        style: {
+          fill: "white",
+        },
+      },
+    },
     label: {
       type: "outer",
       content: "{name} {percentage}",
+      style: {
+        fill: "white",
+      },
     },
     interactions: [
       {
@@ -151,11 +164,14 @@ const Dashboard = (props) => {
   return (
     <div className="customer-db-cont">
       <div className="customer-db-buttons">
-        <p onClick={()=>{
-            localStorage.removeItem('jwt')
-            navigate('/login')
-        }
-        }>LOGOUT</p>
+        <p
+          onClick={() => {
+            localStorage.removeItem("jwt");
+            navigate("/login");
+          }}
+        >
+          LOGOUT
+        </p>
         <p onClick={() => navigate("/profile")}>PROFILE</p>
       </div>
       <div className="customer-db-first">
@@ -165,19 +181,19 @@ const Dashboard = (props) => {
       </div>
       <div className="customer-db-second">
         <div className="customer-db-second-content-cont">
-          <div className="customer-db-second-content-detail">
-            <h4>Total menu ordered</h4>
+          <div className="customer-db-second-content-detail-label">
+            <h3>Total menu ordered</h3>
           </div>
           <div className="customer-db-second-content-detail">
-            <h4>{totalOrder}</h4>
+            <h2>{totalOrder}</h2>
           </div>
         </div>
         <div className="customer-db-second-content-cont">
-          <div className="customer-db-second-content-detail">
-            <h4>Total Spent</h4>
+          <div className="customer-db-second-content-detail-label">
+            <h3>Total Spent</h3>
           </div>
           <div className="customer-db-second-content-detail">
-            <h4>{totalPrice}.00 Bath</h4>
+            <h2>{totalPrice}.00 Bath</h2>
           </div>
         </div>
         <div className="customer-db-second-content-cont-pie">

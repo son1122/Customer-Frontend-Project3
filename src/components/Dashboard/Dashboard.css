@@ -73,13 +73,21 @@ body {
 .customer-db-second-content-cont-pie {
   /* background-color: #fff; */
   height: 250px;
-  width: 450px;
+  width: 550px;
   /* -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4); */
 }
 .customer-db-second-content-detail {
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.customer-db-second-content-detail-label {
+  background-color: #fafafa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,6 +130,7 @@ body {
 .customer-db-third-customerorders-detail-cont {
   /* background-color: aquamarine; */
   overflow-y: scroll;
+  height: 90%;
   /* overflow-x: hidden; */
 }
 .customer-db-third-customerorders-detail-cont-2 {

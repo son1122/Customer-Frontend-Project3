@@ -54,7 +54,7 @@ const Login = (props) => {
             Password :{" "}
             <input
               className="detail-input"
-              type={"text"}
+              type={"password"}
               name={"password"}
               placeholder={" Password"}
               onChange={handleChange}
