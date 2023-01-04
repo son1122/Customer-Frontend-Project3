@@ -66,14 +66,14 @@ Let's thingking about what user want from POS throught User Stories
 <h3>1.2 Wireframe </h3>
   We sperate in two part for wire frame
   
-  <p>part 1 Frontend wire frame, For login page, Order Page, Table Page. We use the same design for both order and Table </p>
+  Start with Frontend wire frame, For login page, Order Page, Table Page. </p>
 <img width="784" alt="Screenshot_2565-12-24_at_10 31 50" src="https://user-images.githubusercontent.com/114508614/210405103-96da9479-fa9e-4994-a661-3ac4bc347836.png">
 
 
 ![Screenshot_2565-12-24_at_10 40 49](https://user-images.githubusercontent.com/114508614/210404838-3faa060b-846b-4155-8514-83004a4a8801.png)
 
   
-  part 2 Database wire frame, we use ERd to draw main table first and add more deatil for dash board and so on
+  Then Database wire frame, we use ERd to draw main table first and add more deatil for dash board and so on
 
   <img width="4348" alt="SECRET_NSA_Project_Planning" src="https://user-images.githubusercontent.com/114508614/210402356-8691bee3-7a3c-4129-838f-f516c18f965b.png">
 
@@ -97,8 +97,12 @@ Let's thingking about what user want from POS throught User Stories
 
 ## 3. Make a simple step plan
 
-Spilt to three part frontend, database in bit.io, sequelize in backend. To see how data is flow we create flow chart and sequence diagram you can see in this pdf
+Spilt to three part 'Frontend' by useing react, 'database' in bit.io and, 'sequelize' in backend. To see how data is flow we create flow chart and sequence diagram you can see in this pdf.
 [sequence_diagram_Order.pdf](https://github.com/son1122/Customer-Frontend-Project3/files/10338837/sequence_diagram_Order.pdf)
+< br />
+Futher more we can reach to Bonus for create a dashboard by useing 'Ant-design'
+<br/>
+the way our Dashboard is simple concept, grab a data. fillier it by dev tool and, Show off!!
 
 
 ### Front POS react app
