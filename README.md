@@ -27,18 +27,18 @@
 ## Function
 
 **User-Frontend** 
-  - Frontend repo : https://github.com/son1122/Fronted-Project-3
-  - Netlify Deploy URL : https://fronted-tda-sei-project3.netlify.app/login
+  - [Frontend_repo](https://github.com/son1122/Fronted-Project-3)
+  - [User_Page](https://fronted-tda-sei-project3.netlify.app/login)
 
   
 **User-backend**
-  - Backend repo : https://github.com/son1122/Backend-Project-3
-  - Netlify Deploy URL : https://backend-sei-project-3.cyclic.app
+  - [Backend_repo](https://github.com/son1122/Backend-Project-3)
+  - [Backen_Page](https://backend-sei-project-3.cyclic.app)
 
   
 **Bonus**
-  - Customer repo : https://github.com/son1122/Customer-Frontend-Project3
-  - Netlify Deploy URL : https://customer-pos.netlify.app/login
+  - [Customer_Repo](https://github.com/son1122/Customer-Frontend-Project3)
+  - [Customer_login_page](https://customer-pos.netlify.app/login)
 
 
 
@@ -78,7 +78,7 @@ Let's thingking about what user want from POS throught User Stories
   <img width="4348" alt="SECRET_NSA_Project_Planning" src="https://user-images.githubusercontent.com/114508614/210402356-8691bee3-7a3c-4129-838f-f516c18f965b.png">
 
 
-<h2>2. make a List of technical difficulties and study all of them</h2>
+<h2>2. Make a List of technical difficulties and study all of them</h2>
 
 <ul>
   <li>sequelize</li>
@@ -91,10 +91,11 @@ Let's thingking about what user want from POS throught User Stories
   <li>psql</li>
   <li>figma</li>
   <li>bootstrap</li>
+  <li>lottie-web</li>
 </ul>
 
 
-## 3. make a simple step plan
+## 3. Make a simple step plan
 
 Spilt to three part frontend, database in bit.io, sequelize in backend. To see how data is flow we create flow chart and sequence diagram you can see in this pdf
 [sequence_diagram_Order.pdf](https://github.com/son1122/Customer-Frontend-Project3/files/10338837/sequence_diagram_Order.pdf)
@@ -148,7 +149,7 @@ Spilt to three part frontend, database in bit.io, sequelize in backend. To see h
 </ol>
 
 
-<h3>Backend database</h3>
+### Backend database
 <ul>
   <li>Make a local data base in psql to test.</li>
   <li>make relation to database as er diagram.</li>
@@ -156,7 +157,7 @@ Spilt to three part frontend, database in bit.io, sequelize in backend. To see h
   <li>connect data base in bit.io to real react page.</li>
 </ul>
 
-<h4>Bonus</h4>
+**Bonus**
 <ul>
   <li>Do an authen.</li>
   <li>create dashboard for POS app.</li>
@@ -174,16 +175,21 @@ All code we write we all so hava psudo code to explain insid but here is some of
 ![image](https://user-images.githubusercontent.com/114508614/210402550-21bd5380-6baf-4b86-a3d9-bac50d6051c7.png)
 
 **API Path**
-This is all path we have make
+Also deu to require ment to create full CRUD API here  is what we have done in each route flie you can take a look for full method in controller file of 
+ 
+```sequelize
+router.get("/auth/login", ctrl.api.login);
+```
 
 
 ```sequelize
-router.get("/auth/login", ctrl.api.login);
-
 router.post("/signup", ctrl.auth.signup);
 router.post("/login", ctrl.auth.login);
 router.get("/verify", ctrl.auth.verify);
+```
 
+
+```sequelize
 router.get("/", ctrl.customer.test);
 router.post("/signup", ctrl.customer.signup);
 router.post("/login", ctrl.customer.login);
@@ -193,7 +199,10 @@ router.get("/data/", ctrl.customer.data);
 router.get("/data/:id", ctrl.customer.dataId);
 router.get("/menu", ctrl.customer.menu);
 router.delete("/user", ctrl.customer.deleteUser);
+```
 
+
+```sequelize
 router.get("/menu", ctrl.dashboard.getMenuDashboard);
 router.get("/menuitem", ctrl.dashboard.getMenu);
 router.get("/menu/:id", ctrl.dashboard.getMenuDashboard);
@@ -211,7 +220,10 @@ router.get("/location/customer", ctrl.dashboard.getLocationSeller);
 router.get("/", ctrl.menuitem.getAllMenuItem);
 router.get("/category/:catid", ctrl.menuitem.allMenuItemByCategory);
 router.get("/search", ctrl.menuitem.searchMenuItem);
+```
 
+
+```sequelize
 router.get("/", ctrl.order.testOrder);
 router.post("/", ctrl.order.createOrder);
 router.get("/detail", ctrl.order.showOrderDetail);
@@ -220,9 +232,11 @@ router.get("/:index", ctrl.order.showOrder);
 router.put("/status/:tableNumber", ctrl.order.updateOrderStatus);
 
 router.get("/:tableNumber", ctrl.orderdetail.getOrderDetailMatch);
+```
 
+
+```sequelize
 router.get("/", ctrl.table.getAllTable);
-
 ```
 
 <h3>What would you do differently?</h3>
@@ -238,8 +252,9 @@ router.get("/", ctrl.table.getAllTable);
      <p>🎨 Powerful theme customization in every detail.</p>
   </div>
 
-check out for more in <a> https://ant.design/ </a>
+check out for more in [ant-design](https://ant.design/)
 </p>
+
 <h3>What are you most proud of?</h3>
 
   
@@ -247,8 +262,8 @@ check out for more in <a> https://ant.design/ </a>
 
 <h3>What did you learn?</h3>
 <ul>
-  <li>team work planing</li>
-  <li>react ant design</li>
-  <li>connect database to react app</li>
+  <li>Team work planing</li>
+  <li>New tool</li>
+  <li>Idea discussing</li>
 <ul>
 
